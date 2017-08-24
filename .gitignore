@@ -1,0 +1,12 @@
+*.log
+private.*
+.htaccess
+nbproject/
+nbproject/private/*
+nbproject/private/private.xml
+noaccess/
+sitemap.xml
+sitemap.xml.gz
+vendor/*
+composer.lock
+front/cache/*

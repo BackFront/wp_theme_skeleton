@@ -1,8 +1,8 @@
 <?php
 /**
  * @package Umbrella 
- * @subpackage wp_basetheme
- * @version 1.0.0
+ * @subpackage wp_theme_skeleton
+ * @version 1.0
  * 
  * @author Douglas Alves <alves.douglaz@gmail.com>
  * @link http://https://github.com/BackFront/wp_theme_skeleton/ Project Repository
@@ -28,3 +28,20 @@ define('WPTS_MODEL_PATH', '/src');
 define('WPTS_TEMPLATE_PATH', get_template_directory());
 define('WPTS_TEMPLATE_URI', get_template_directory_uri());
 define('WPTS_AUTH', '<YOUR HASH HERE!>'); //Used in authentications
+
+$autoloader = require_once(UMB_TEMPLATE_PATH . UMB_AUTOLOAD);
+$app = new 
+
+/**
+ * Application setup
+ */
+add_action('init', function(){
+    
+});
+
+/**
+ * Default theme definitions
+ */
+add_action('after_setup_theme', function(){
+    
+});

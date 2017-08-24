@@ -1,0 +1,31 @@
+{
+    "name": "backfront/wp_theme_skeleton",
+    "description": "Base theme to init your modular project in wordpress using the Umbrella package",
+    "homepage": "http://alvesdouglas.com.br/",
+    "keywords": [
+        "umbrella",
+        "backfront",
+        "skelleton",
+        "wordpress",
+        "theme"
+    ],
+    "license": "Apache License 2.0",
+    "authors": [
+        {
+            "name": "Douglas Alves",
+            "email": "alves.douglaz@gmail.com",
+            "homepage": "http://alvesdouglas.com.br/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.24",
+        "backfront/umbrella": "dev-master",
+        "php": ">=5.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Backfront\\": "src/Backfront/"
+        }
+    }
+}

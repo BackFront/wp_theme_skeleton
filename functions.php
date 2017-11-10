@@ -11,37 +11,6 @@
 if (!defined('ABSPATH'))
     die('No direct script access allowed');
 
-/* ================================
- * Constants =================== */
-define('WPTS_VERSION', '1.0.0');
-define('WPTS_MODULE_PATH', '/modules');
-define('WPTS_VIEWS_PATH', '/view');
-define('WPTS_INCLUDES_PATH', '/includes');
-define('WPTS_HOME_URL', get_home_url());
-
-define('WPTS_ADMIN_PATH', get_template_directory() . '/admin');
-define('WPTS_FRONT_PATH', get_template_directory() . '/front');
-define('WPTS_AUTOLOAD', '/vendor/autoload.php');
-
-define('WPTS_ASSETS', get_template_directory_uri() . '/assets');
-define('WPTS_MODEL_PATH', '/src');
-define('WPTS_TEMPLATE_PATH', get_template_directory());
-define('WPTS_TEMPLATE_URI', get_template_directory_uri());
-define('WPTS_AUTH', '<YOUR HASH HERE!>'); //Used in authentications
-
-$autoloader = require_once(UMB_TEMPLATE_PATH . UMB_AUTOLOAD);
-$app = new 
-
-/**
- * Application setup
- */
-add_action('init', function(){
-    
-});
-
-/**
- * Default theme definitions
- */
-add_action('after_setup_theme', function(){
-    
-});
+/** SITE
+*************//* GLOBAL *//* CONFIGURATIONS */
+require_once(dirname(__FILE__).'/bootstrap.php'); //Don't remove this line

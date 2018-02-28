@@ -1,9 +1,8 @@
 <?php
-if (!defined('ABSPATH'))
-    die('No direct script access allowed');
+if(!defined('ABSPATH')) die('No direct script access allowed');
 
 /** SITE
-*************//* GLOBAL *//* CONSTANTS */
+ *************//* GLOBAL *//* CONSTANTS */
 define('WPTS_VERSION', '1.0');
 define('WPTS_MODULE_PATH', '/modules');
 define('WPTS_VIEWS_PATH', '/src/WP_Theme_Skeleton/Views');
@@ -21,14 +20,16 @@ define('WPTS_TEMPLATE_URI', get_template_directory_uri());
 define('WPTS_AUTH', '<YOUR HASH HERE!>'); //Used in authentications
 
 $autoloader = require_once(dirname(__FILE__) . '/vendor/autoload.php');
-
+/**
+ * @var $app Backfront\Wordpress\Application
+ */
 $app = Backfront\Wordpress\Application::getInstance();
 
 /**
  * Application setup
  * @since 1.0
  */
-add_action('init', function() use(&$app) {
+add_action('init', function() use (&$app) {
     $app->MDLPATH = WPTS_MODULE_PATH;
     $app->TPLPATH = WPTS_VIEWS_PATH;
 });
@@ -37,6 +38,6 @@ add_action('init', function() use(&$app) {
  * Default theme definitions
  * @since 1.0
  */
-add_action('after_setup_theme', function(){
+add_action('after_setup_theme', function() {
     //Your setups
 });

@@ -1,5 +1,6 @@
 *.log
 private.*
+.idea
 .htaccess
 nbproject/
 nbproject/private/*

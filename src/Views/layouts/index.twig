@@ -1,0 +1,82 @@
+{#{% set site = adminService.getSiteOptions %}#}
+{% extends '/templates/base.twig' %}
+
+{% set page = {'title': 'Dashboard', 'subtitle': 'Control panel'} %}
+
+{% set box_welcome = {
+    'settings': {
+        'class': 'grey'
+    },
+    'header': 'Welcome',
+    'content': 'Hello World'
+} %}
+
+{% set infos = [
+    {
+        'box':
+        {
+            'settings':
+            {
+                'class': 'green'
+            },
+            'footer': 'Welcome'
+        },
+        'count': 64,
+        'label': "Posts",
+        'icon': "pin"
+    },
+    {
+        'box':
+        {
+            'settings':
+            {
+                'class': 'blue'
+            },
+            'footer': 'Welcome'
+        },
+        'count': 367,
+        'label': "Produtos",
+        'icon': "shopping cart"
+    },
+    {
+        'box':
+        {
+            'settings':
+            {
+                'class': 'violet'
+            },
+            'footer': 'Welcome'
+        },
+        'count': 535,
+        'label': "Novas ordens",
+        'icon': "truck"
+    },
+    {
+        'box':
+        {
+            'settings':
+            {
+                'class': 'teal'
+            },
+            'footer': 'Welcome'
+        },
+        'count': '3942',
+        'label': "vendas",
+        'icon': "dollar sign"
+    },
+] %}
+
+{% block main %}
+    <div class="ui basic segment">
+        <div class="bootstrap-gs">
+            <div class="row">
+                {% for info in infos %}
+                    <div class="col-md-3">
+                        {#{% include 'admin::components.dashboard.info_count' %}#}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {#{% include 'admin::templates.box' with { box: box_welcome } %}#}
+    </div>
+{% endblock %}

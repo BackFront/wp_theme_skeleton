@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+    <head>
+        {% block head %}
+            {% include 'templates/head.twig' %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            {% block aside %}
+                {% include 'templates/aside.twig' %}
+            {% endblock %}
+
+            <div class="pusher content">
+                <header>
+                    {% block header %}
+                        {% include 'templates/header.twig' %}
+                    {% endblock %}
+                </header>
+
+                <main>
+                    {% block page_title %}
+                        {% include 'templates/page_title' %}
+                    {% endblock %}
+
+                    {% block main %}
+                        <div class="ui basic segment" style="border:2px solid #f0f">
+                        </div>
+                    {% endblock %}
+                </main>
+
+                <footer class="admin puhser">
+                    {% block footer %}
+                        {% include 'templates/footer.twig' %}
+                    {% endblock %}
+                </footer>
+            </div>
+        {% endblock %}
+    </body>
+</html>

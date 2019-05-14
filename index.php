@@ -10,4 +10,10 @@ if(!defined('ABSPATH')) die('No direct script access allowed');
 //$valid = (new \App\Validators\TesteValidator())->with(['name' => '', 'email' => 'emialdot.net', 'password' => 'req23', 'confirm_password' => 'req123'])->passesOrFail();
 //echo "<pre>";
 //var_dump($valid);
-echo "</pre>";
+//echo "</pre>";
+
+// Load the layout
+//var_dump($app);
+
+dump($app);
+//$app->twig()->render('layouts/index.twig', []);

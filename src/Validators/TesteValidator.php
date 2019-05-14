@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Validators {
+namespace App\Validators
+{
     class TesteValidator extends \Backfront\Validator\Validator
     {
         public $rules = [

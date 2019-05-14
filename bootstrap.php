@@ -5,7 +5,7 @@ if(!defined('ABSPATH')) die('No direct script access allowed');
  *************//* GLOBAL *//* CONSTANTS */
 define('WPTS_VERSION', '1.0');
 define('WPTS_MODULE_PATH', '/modules');
-define('WPTS_VIEWS_PATH', '/src/WP_Theme_Skeleton/Views');
+define('WPTS_VIEWS_PATH', __DIR__ . '/src/Views');
 define('WPTS_INCLUDES_PATH', '/includes');
 define('WPTS_HOME_URL', get_home_url());
 
@@ -23,7 +23,10 @@ $autoloader = require_once(dirname(__FILE__) . '/vendor/autoload.php');
 /**
  * @var $app Backfront\Wordpress\Application
  */
-$app = Backfront\Wordpress\Application::getInstance();
+$app = Backfront\Wordpress\WPApp::getInstance();
+$app->providers = [
+    App\Providers\TwigProvider::class
+];
 
 /**
  * Application setup
@@ -34,6 +37,9 @@ add_action('init', function() use (&$app) {
     $app->TPLPATH = WPTS_VIEWS_PATH;
 });
 
+do_action('wp_loaded', function() use (&$app) {
+    $app->boot();
+});
 /**
  * Default theme definitions
  * @since 1.0

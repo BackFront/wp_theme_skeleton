@@ -2,6 +2,7 @@
 namespace App\Providers
 {
     use Pimple\Container;
+    use App\Supports\Twig\TwigFunctionsSupport;
 
     class TwigProvider extends \Backfront\Support\ServiceProvider
     {
@@ -9,11 +10,8 @@ namespace App\Providers
 
         public function boot()
         {
-            $this->app->view =
-            $twig = $this->app->container['make'](\Twig_Environment::class, [
-                'loader' => $this->twigLoader
-            ]);
-            $this->registerTwigFunctionAsset($twig);
+            $this->app->view = $twig = $this->app->container['make'](\Twig_Environment::class, [$this->twigLoader, ['debug' => true]]);
+            $this->loadTwigFunctions();
         }
 
         public function register(Container $container): void
@@ -23,16 +21,11 @@ namespace App\Providers
             ]);
         }
 
-        protected function registerTwigFunctionAsset(\Twig_Environment $twig): void
+        protected function loadTwigFunctions()
         {
-            $this->app->view->addFunction(
-                $this->app->container['make'](\Twig_SimpleFunction::class, [
-                    'name' => 'asset',
-                    'callable' => function($src = null) {
-                        return $this->app->ASSETS_PATH . DIRECTORY_SEPARATOR . $src;
-                    }
-                ])
-            );
+            TwigFunctionsSupport::twigAddFunctionDefault($this->app);
+            TwigFunctionsSupport::twigAddFunctionAsset($this->app);
+            TwigFunctionsSupport::twigAddFunctionGetOpion($this->app);
         }
     }
 }

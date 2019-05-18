@@ -1,0 +1,12 @@
+@import url("../fonts/fonts.css");
+.ui.visible.left.sidebar ~ .pusher { padding-right: 260px; }
+.ui.container.fluid { padding: 0; }
+
+.pusher.content { height: 100%; }
+
+footer.admin { position: absolute; bottom:0; width: 100%; padding-right: 260px; }
+footer.admin .segment.inverted { background-color: #2b2b2c; }
+
+.debug * {
+    border: 1px solid;
+}

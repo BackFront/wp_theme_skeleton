@@ -24,9 +24,6 @@ $autoloader = require_once(dirname(__FILE__) . '/vendor/autoload.php');
  * @var $app Backfront\Wordpress\Application
  */
 $app = Backfront\Wordpress\WPApp::getInstance();
-$app->providers = [
-    App\Providers\TwigProvider::class
-];
 
 /**
  * Application setup
@@ -35,10 +32,13 @@ $app->providers = [
 add_action('init', function() use (&$app) {
     $app->MDLPATH = WPTS_MODULE_PATH;
     $app->TPLPATH = WPTS_VIEWS_PATH;
+    $app->ASSETS_PATH = WPTS_ASSETS;
+
+    $app->register(App\Providers\TwigProvider::class);
 });
 
-do_action('wp_loaded', function() use (&$app) {
-    $app->boot();
+add_action('wp_loaded', function() use (&$app) {
+    $app->Start();
 });
 /**
  * Default theme definitions

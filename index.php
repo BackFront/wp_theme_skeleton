@@ -15,5 +15,4 @@ if(!defined('ABSPATH')) die('No direct script access allowed');
 // Load the layout
 //var_dump($app);
 
-dump($app);
-//$app->twig()->render('layouts/index.twig', []);
+echo $app->view->render('layouts/index.twig', []);

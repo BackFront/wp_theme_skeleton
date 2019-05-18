@@ -4,16 +4,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block site_styles %}
-    <link rel="stylesheet" href="{{ asset("/assets/semantic-ui/semantic.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("/assets/css/bootstrap_gs.min.css") }}">
-    <link rel="stylesheet" href="{{ asset("/assets/css/admin.css") }}">
+    <link rel="stylesheet" href="{{ asset("semantic-ui/semantic.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/bootstrap_gs.min.css") }}">
+    <link rel="stylesheet" href="{{ asset("css/admin.css") }}">
     {% for style in site.styles %}
         <link rel="stylesheet" href="{{ asset(style.href) }}">
     {% endfor %}
 {% endblock %}
 
 {% block site_scripts %}
-    <script src="{{ asset("/assets/semantic-ui/semantic.min.js") }}"></script>
+    <script src="{{ asset("semantic-ui/semantic.min.js") }}"></script>
     {% for script in site.scripts %}
         <script src="{{ asset(style.href) }}"></script>
     {% endfor %}
